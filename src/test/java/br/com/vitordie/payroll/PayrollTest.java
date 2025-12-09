@@ -57,4 +57,35 @@ public class PayrollTest {
         PaymentMethod pm = e.getMethod();
         Assertions.assertTrue(pm instanceof HoldMethod);
     }
+
+    @Test
+    public void testAddCommissionedEmployee() {
+        int empId = 3;
+        // Precisaremos criar esta transação: AddCommissionedEmployee
+        AddCommissionedEmployee t =
+                new AddCommissionedEmployee(empId, "Justin", "Home", 2500, 9.5, database);
+        t.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+        Assertions.assertEquals("Justin", e.getName());
+
+        PaymentClassification pc = e.getClassification();
+        // Verifica se é instância da classe que vamos criar
+        Assertions.assertTrue(pc instanceof CommissionedClassification);
+
+        CommissionedClassification cc = (CommissionedClassification) pc;
+
+        // Validando Salário Base e Taxa de Comissão
+        Assertions.assertEquals(2500, cc.getBaseRate(), .001);
+        Assertions.assertEquals(9.5, cc.getCommissionRate(), .001);
+
+        PaymentSchedule ps = e.getSchedule();
+        // Verifica a agenda quinzenal
+        Assertions.assertTrue(ps instanceof BiWeeklySchedule);
+
+        PaymentMethod pm = e.getMethod();
+        Assertions.assertTrue(pm instanceof HoldMethod);
+    }
+
 }

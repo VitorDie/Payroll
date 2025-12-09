@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="ParyollTest: TDD(test fail)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/AddHourlyEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/HourlyClassification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/TimeCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/WeeklySchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +38,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.PayrollTest.executor": "Run",
+    "JUnit.PayrollTest.testAddHourlyEmployee.executor": "Run",
     "JUnit.PayrollTest.testAddSalariedEmployee.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
