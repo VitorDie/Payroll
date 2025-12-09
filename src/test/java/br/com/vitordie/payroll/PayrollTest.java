@@ -1,4 +1,4 @@
-package br.com.vitordie.payroll_domain;
+package br.com.vitordie.payroll;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +26,7 @@ public class PayrollTest {
         Assertions.assertTrue(pc instanceof  SalariedClassification);
         SalariedClassification sc = (SalariedClassification) pc;
 
-        Assertions.assertEquals(100.00, sc.getSalary(), .001);
+        Assertions.assertEquals(1000.00, sc.getSalary(), .001);
         PaymentSchedule ps = e.getSchedule();
         Assertions.assertTrue(ps instanceof MonthlySchedule);
 

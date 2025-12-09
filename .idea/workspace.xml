@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll_domain/PayrollTest.java" afterDir="false" />
+    <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="ParyollTest: TDD(test fail)">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/AddEmployeeTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/AddSalariedEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/Affiliation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/HoldMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/InMemoryPayrollDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/MonthlySchedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/NoAffiliation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/Paycheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/PaymentClassification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/PaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/PaymentSchedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/SalariedClassification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/PayrollDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/PayrollDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -29,9 +40,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="34nhuwkv5fwcMvzq2hzie8KgG3A" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,7 +54,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.PayrollTest.executor": "Run",
+    "JUnit.PayrollTest.testAddSalariedEmployee.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/vitordie/Portifolio/Payroll/src/test/java/br/com/vitordie",
@@ -51,11 +65,17 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.vitordie.payroll" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/br/com/vitordie" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.vitordie.payroll" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest">
+  <component name="RunManager" selected="JUnit.PayrollTest.testAddSalariedEmployee">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.Main" />
       <module name="payroll-java" />
@@ -73,21 +93,38 @@
       <module name="payroll-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.vitordie.payroll_domain.*" />
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.vitordie.payroll_domain" />
-      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll_domain.PayrollTest" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PayrollTest.testAddSalariedEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="payroll-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
+      <option name="METHOD_NAME" value="testAddSalariedEmployee" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PayrollTest" />
+        <item itemvalue="JUnit.PayrollTest.testAddSalariedEmployee" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PayrollTest" />
       </list>
     </recent_temporary>
   </component>
@@ -100,6 +137,19 @@
       <option name="presentableId" value="Default" />
       <updated>1761855470002</updated>
     </task>
+    <task id="LOCAL-00001" summary="ParyollTest: TDD(test fail)">
+      <option name="closed" value="true" />
+      <created>1761856932012</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761856932012</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ParyollTest: TDD(test fail)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ParyollTest: TDD(test fail)" />
   </component>
 </project>
