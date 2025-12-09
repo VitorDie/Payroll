@@ -33,4 +33,28 @@ public class PayrollTest {
         PaymentMethod pm = e.getMethod();
         Assertions.assertTrue(pm instanceof HoldMethod);
     }
+
+    @Test
+    public void testAddHourlyEmployee() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(empId, "Micah", "Home", 200.00, database);
+        t.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertEquals("Micah", e.getName());
+
+        PaymentClassification pc = e.getClassification();
+        Assertions.assertTrue(pc instanceof HourlyClassification);
+
+        // Casting explícito (o 'as' do C# não existe dessa forma no Java)
+        HourlyClassification hc = (HourlyClassification) pc;
+
+        Assertions.assertEquals(200.00, hc.getHourlyRate(), .001);
+
+        PaymentSchedule ps = e.getSchedule();
+        Assertions.assertTrue(ps instanceof WeeklySchedule);
+
+        PaymentMethod pm = e.getMethod();
+        Assertions.assertTrue(pm instanceof HoldMethod);
+    }
 }
