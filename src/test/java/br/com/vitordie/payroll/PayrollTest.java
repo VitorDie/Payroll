@@ -132,4 +132,31 @@ public class PayrollTest {
         Assertions.assertNotNull(tc);
         Assertions.assertEquals(8.0, tc.getHours());
     }
+
+    @Test
+    public void testSalesReceiptTransaction() {
+        int empId = 5;
+
+        // Criando o funcionário comissionado
+        AddCommissionedEmployee t = new AddCommissionedEmployee(
+                empId, "Bill", "Home", 2000, 15.25, database);
+        t.execute();
+
+        // Lançando a venda (SalesReceiptTransaction ainda precisa ser criada)
+        SalesReceiptTransaction tct = new SalesReceiptTransaction(
+                LocalDate.of(2005, 7, 31), 250.00, empId, database);
+        tct.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentClassification pc = e.getClassification();
+        Assertions.assertTrue(pc instanceof CommissionedClassification);
+
+        CommissionedClassification cc = (CommissionedClassification) pc;
+
+        SalesReceipt sr = cc.getSalesReceipt(LocalDate.of(2005, 7, 31));
+        Assertions.assertNotNull(sr);
+        Assertions.assertEquals(250.00, sr.getSaleAmount(), .001);
+    }
 }
