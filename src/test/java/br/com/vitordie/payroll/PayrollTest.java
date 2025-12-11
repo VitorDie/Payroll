@@ -159,4 +159,36 @@ public class PayrollTest {
         Assertions.assertNotNull(sr);
         Assertions.assertEquals(250.00, sr.getSaleAmount(), .001);
     }
+
+    @Test
+    public void testAddServiceCharge() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(
+                empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        // Precisamos criar esta classe: UnionAffiliation
+        // Nota: Geralmente passamos a taxa sindical no construtor,
+        // mas vou seguir seu código C# que usa o construtor padrão por enquanto.
+        UnionAffiliation af = new UnionAffiliation();
+
+        e.setAffiliation(af);
+
+        int memberId = 86; // ID do membro no sindicato (Maxwell Smart)
+        database.addUnionMember(memberId, e);
+
+        // Precisamos criar esta transação: ServiceChargeTransaction
+        ServiceChargeTransaction sct = new ServiceChargeTransaction(
+                memberId, LocalDate.of(2005, 8, 8), 12.95, database);
+        sct.execute();
+
+        // Precisamos criar esta classe: ServiceCharge
+        ServiceCharge sc = af.getServiceCharge(LocalDate.of(2005, 8, 8));
+
+        Assertions.assertNotNull(sc);
+        Assertions.assertEquals(12.95, sc.getAmount(), .001);
+    }
 }
