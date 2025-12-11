@@ -88,4 +88,22 @@ public class PayrollTest {
         Assertions.assertTrue(pm instanceof HoldMethod);
     }
 
+    @Test
+    public void testDeleteEmployee() {
+        int empId = 4;
+        AddCommissionedEmployee t =
+                new AddCommissionedEmployee(empId, "Bill", "Home", 2500, 3.2, database);
+        t.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        // Agora instanciamos a transação de deleção (que vamos criar a seguir)
+        DeleteEmployeeTransaction dt =
+                new DeleteEmployeeTransaction(empId, database);
+        dt.execute();
+
+        e = database.getEmployee(empId);
+        Assertions.assertNull(e);
+    }
 }
