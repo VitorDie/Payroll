@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 public class PayrollTest {
 
     private PayrollDatabase database;
@@ -105,5 +107,29 @@ public class PayrollTest {
 
         e = database.getEmployee(empId);
         Assertions.assertNull(e);
+    }
+
+    @Test
+    public void testTimeCardTransaction() {
+        int empId = 5;
+        AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        // LocalDate.of(ano, mes, dia) substitui o new DateTime(...)
+        TimeCardTransaction tct = new TimeCardTransaction(
+                LocalDate.of(2005, 7, 31), 8.0, empId, database);
+        tct.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentClassification pc = e.getClassification();
+        Assertions.assertTrue(pc instanceof HourlyClassification);
+
+        HourlyClassification hc = (HourlyClassification) pc;
+
+        TimeCard tc = hc.getTimeCard(LocalDate.of(2005, 7, 31));
+        Assertions.assertNotNull(tc);
+        Assertions.assertEquals(8.0, tc.getHours());
     }
 }
