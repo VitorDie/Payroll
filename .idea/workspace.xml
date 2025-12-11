@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="ParyollTest: TDD(test fail)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/AddCommissionedEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/BiWeeklySchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/CommissionedClassification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/SalesReceipt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/DeleteEmployeeTransaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.PayrollTest.executor": "Run",
-    "JUnit.PayrollTest.testAddHourlyEmployee.executor": "Run",
-    "JUnit.PayrollTest.testAddSalariedEmployee.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/vitordie/Portifolio/Payroll/src/test/java/br/com/vitordie",
-    "onboarding.tips.debug.path": "/home/vitordie/Portifolio/Payroll/src/main/java/br/com/vitordie/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayrollTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayrollTest.testAddHourlyEmployee.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayrollTest.testAddSalariedEmployee.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vitordie/Portifolio/Payroll/src/test/java/br/com/vitordie&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/vitordie/Portifolio/Payroll/src/main/java/br/com/vitordie/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.vitordie.payroll" />
