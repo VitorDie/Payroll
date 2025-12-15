@@ -260,7 +260,7 @@ public class PayrollTest {
         Assertions.assertEquals(3000.00, sc.getSalary(), .001);
 
         PaymentSchedule ps = e.getSchedule();
-        // Verifica se a agenda mudou para Mensal
+
         Assertions.assertTrue(ps instanceof MonthlySchedule);
     }
 }
