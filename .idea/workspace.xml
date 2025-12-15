@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="ParyollTest: TDD(test fail)">
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeClassificationTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeHourlyTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
