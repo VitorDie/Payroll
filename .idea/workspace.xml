@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="ParyollTest: TDD(test fail)" />
+    <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="ParyollTest: TDD(test fail)">
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +59,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest">
+  <component name="RunManager" selected="JUnit.PayrollTest.testChangeNameTransaction">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.Main" />
       <module name="payroll-java" />
@@ -118,8 +120,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PayrollTest.testChangeNameTransaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="payroll-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
+      <option name="METHOD_NAME" value="testChangeNameTransaction" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testChangeNameTransaction" />
         <item itemvalue="JUnit.PayrollTest" />
         <item itemvalue="JUnit.PayrollTest.testAddHourlyEmployee" />
         <item itemvalue="JUnit.PayrollTest.testAddSalariedEmployee" />

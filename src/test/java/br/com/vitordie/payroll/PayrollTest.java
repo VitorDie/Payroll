@@ -191,4 +191,19 @@ public class PayrollTest {
         Assertions.assertNotNull(sc);
         Assertions.assertEquals(12.95, sc.getAmount(), .001);
     }
+
+    @Test
+    public void testChangeNameTransaction() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        // Precisamos criar esta transação
+        ChangeNameTransaction cnt = new ChangeNameTransaction(empId, "Bob", database);
+        cnt.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+        Assertions.assertEquals("Bob", e.getName());
+    }
 }
