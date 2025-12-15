@@ -234,4 +234,33 @@ public class PayrollTest {
         // Verifica se a agenda mudou automaticamente para Semanal
         Assertions.assertTrue(ps instanceof WeeklySchedule);
     }
+
+    @Test
+    public void testChangeSalariedTransaction() {
+        int empId = 4;
+
+        // Criação inicial como Comissionado
+        AddCommissionedEmployee t = new AddCommissionedEmployee(
+                empId, "Lance", "Home", 2500, 3.2, database);
+        t.execute();
+
+        // Execução da mudança para Assalariado
+        ChangeSalariedTransaction cst =
+                new ChangeSalariedTransaction(empId, 3000.00, database);
+        cst.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentClassification pc = e.getClassification();
+        Assertions.assertNotNull(pc);
+        Assertions.assertTrue(pc instanceof SalariedClassification);
+
+        SalariedClassification sc = (SalariedClassification) pc;
+        Assertions.assertEquals(3000.00, sc.getSalary(), .001);
+
+        PaymentSchedule ps = e.getSchedule();
+        // Verifica se a agenda mudou para Mensal
+        Assertions.assertTrue(ps instanceof MonthlySchedule);
+    }
 }
