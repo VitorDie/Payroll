@@ -206,4 +206,32 @@ public class PayrollTest {
         Assertions.assertNotNull(e);
         Assertions.assertEquals("Bob", e.getName());
     }
+
+    @Test
+    public void testChangeHourlyTransaction() {
+        int empId = 3;
+
+        // Começa como Comissionado (Agenda Quinzenal)
+        AddCommissionedEmployee t = new AddCommissionedEmployee(
+                empId, "Lance", "Home", 2500, 3.2, database);
+        t.execute();
+
+        // Executa a mudança para Horista
+        ChangeHourlyTransaction cht = new ChangeHourlyTransaction(empId, 27.52, database);
+        cht.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentClassification pc = e.getClassification();
+        Assertions.assertNotNull(pc);
+        Assertions.assertTrue(pc instanceof HourlyClassification);
+
+        HourlyClassification hc = (HourlyClassification) pc;
+        Assertions.assertEquals(27.52, hc.getHourlyRate(), .001);
+
+        PaymentSchedule ps = e.getSchedule();
+        // Verifica se a agenda mudou automaticamente para Semanal
+        Assertions.assertTrue(ps instanceof WeeklySchedule);
+    }
 }
