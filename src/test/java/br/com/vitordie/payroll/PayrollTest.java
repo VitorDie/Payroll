@@ -453,4 +453,22 @@ public class PayrollTest {
         Assertions.assertEquals(0.0, pc.getDeductions(), .001);
         Assertions.assertEquals(pay, pc.getNetPay(), .001);
     }
+
+    @Test
+    public void testPaySingleHourlyEmployeeOneTimeCard() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(
+                empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 9); // Sexta-feira
+
+        TimeCardTransaction tc = new TimeCardTransaction(payDate, 2.0, empId, database);
+        tc.execute();
+
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        validatePaycheck(pt, empId, payDate, 30.5);
+    }
 }
