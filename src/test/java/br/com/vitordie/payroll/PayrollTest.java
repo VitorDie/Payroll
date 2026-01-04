@@ -552,4 +552,18 @@ public class PayrollTest {
 
         validatePaycheck(pt, empId, payDate, 2 * 15.25);
     }
+
+    @Test
+    public void testPayingSingleCommissionedEmployeeNoReceipts() {
+        int empId = 2;
+        AddCommissionedEmployee t = new AddCommissionedEmployee(
+                empId, "Bill", "Home", 1500.0, 10.0, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 16); // Dia de pagamento
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        validatePaycheck(pt, empId, payDate, 1500.0);
+    }
 }

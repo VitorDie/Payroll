@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="git push">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +64,7 @@
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOneTimeCard.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOvertimeOneTimeCard.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeTwoTimeCards.executor": "Run",
+    "JUnit.PayrollTest.testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods.executor": "Run",
     "JUnit.PayrollTest.testPaySingleSalariedEmployee.executor": "Run",
     "JUnit.PayrollTest.testPaySingleSalariedEmployeeOnWrongDate.executor": "Run",
     "JUnit.PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards.executor": "Run",
@@ -85,7 +87,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest.testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods">
+  <component name="RunManager" selected="JUnit.PayrollTest.testPayingSingleCommissionedEmployeeNoReceipts">
     <configuration name="PayrollTest.testPaySingleHourlyEmployeeOnWrongDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -97,22 +99,6 @@
       <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
       <option name="METHOD_NAME" value="testPaySingleHourlyEmployeeOnWrongDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PayrollTest.testPaySingleHourlyEmployeeOneTimeCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="payroll-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
-      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
-      <option name="METHOD_NAME" value="testPaySingleHourlyEmployeeOneTimeCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,13 +152,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PayrollTest.testPayingSingleCommissionedEmployeeNoReceipts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="payroll-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
+      <option name="METHOD_NAME" value="testPayingSingleCommissionedEmployeeNoReceipts" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testPayingSingleCommissionedEmployeeNoReceipts" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeTwoTimeCards" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeOnWrongDate" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeOvertimeOneTimeCard" />
-        <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeOneTimeCard" />
       </list>
     </recent_temporary>
   </component>
