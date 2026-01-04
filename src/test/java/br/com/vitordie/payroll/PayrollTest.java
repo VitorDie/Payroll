@@ -263,4 +263,30 @@ public class PayrollTest {
 
         Assertions.assertTrue(ps instanceof MonthlySchedule);
     }
+
+    @Test
+    public void testChangeCommissionedTransaction() {
+        int empId = 5;
+        AddSalariedEmployee t = new AddSalariedEmployee(
+                empId, "Bob", "Home", 2500.00, database);
+        t.execute();
+
+        ChangeCommissionedTransaction cht = new ChangeCommissionedTransaction(
+                empId, 1250.00, 5.6, database);
+        cht.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentClassification pc = e.getClassification();
+        Assertions.assertNotNull(pc);
+        Assertions.assertTrue(pc instanceof CommissionedClassification);
+
+        CommissionedClassification cc = (CommissionedClassification) pc;
+        Assertions.assertEquals(1250.00, cc.getBaseRate(), .001);
+        Assertions.assertEquals(5.6, cc.getCommissionRate(), .001);
+
+        PaymentSchedule ps = e.getSchedule();
+        Assertions.assertTrue(ps instanceof BiWeeklySchedule);
+    }
 }
