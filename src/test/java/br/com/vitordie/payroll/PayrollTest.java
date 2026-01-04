@@ -345,4 +345,29 @@ public class PayrollTest {
         Assertions.assertNotNull(method);
         Assertions.assertTrue(method instanceof MailMethod);
     }
+
+    @Test
+    public void testChangeUnionMember() {
+        int empId = 9;
+        AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        int memberId = 7743;
+        ChangeMemberTransaction cmt = new ChangeMemberTransaction(empId, memberId, 99.42, database);
+        cmt.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        Affiliation affiliation = e.getAffiliation();
+        Assertions.assertNotNull(affiliation);
+        Assertions.assertTrue(affiliation instanceof UnionAffiliation);
+
+        UnionAffiliation uf = (UnionAffiliation) affiliation;
+        Assertions.assertEquals(99.42, uf.getDues(), .001);
+
+        Employee member = database.getUnionMember(memberId);
+        Assertions.assertNotNull(member);
+        Assertions.assertEquals(e, member);
+    }
 }
