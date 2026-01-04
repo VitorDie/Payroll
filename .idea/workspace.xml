@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="git push">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeDirectTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeMethodTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/DirectDepositMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeCommissionedTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeCommissionedTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,7 @@
     "JUnit.PayrollTest.testAddHourlyEmployee.executor": "Run",
     "JUnit.PayrollTest.testAddSalariedEmployee.executor": "Run",
     "JUnit.PayrollTest.testChangeCommissionedTransaction.executor": "Run",
+    "JUnit.PayrollTest.testChangeDirectMethod.executor": "Run",
     "JUnit.PayrollTest.testChangeNameTransaction.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -75,7 +77,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest.testChangeCommissionedTransaction">
+  <component name="RunManager" selected="JUnit.PayrollTest.testChangeDirectMethod">
     <configuration name="PayrollTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -107,22 +109,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PayrollTest.testAddSalariedEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="payroll-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
-      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
-      <option name="METHOD_NAME" value="testAddSalariedEmployee" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PayrollTest.testChangeCommissionedTransaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -134,6 +120,22 @@
       <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
       <option name="METHOD_NAME" value="testChangeCommissionedTransaction" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PayrollTest.testChangeDirectMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="payroll-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
+      <option name="METHOD_NAME" value="testChangeDirectMethod" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testChangeDirectMethod" />
         <item itemvalue="JUnit.PayrollTest.testChangeCommissionedTransaction" />
         <item itemvalue="JUnit.PayrollTest" />
         <item itemvalue="JUnit.PayrollTest.testChangeNameTransaction" />
         <item itemvalue="JUnit.PayrollTest.testAddHourlyEmployee" />
-        <item itemvalue="JUnit.PayrollTest.testAddSalariedEmployee" />
       </list>
     </recent_temporary>
   </component>
