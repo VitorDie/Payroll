@@ -584,4 +584,23 @@ public class PayrollTest {
 
         validatePaycheck(pt, empId, payDate, 2000.00);
     }
+
+    @Test
+    public void testPaySingleCommissionedEmployeeOnWrongDate() {
+        int empId = 2;
+        AddCommissionedEmployee t = new AddCommissionedEmployee(
+                empId, "Bill", "Home", 1500.0, 10.0, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 9); // Sexta-feira errada
+
+        SalesReceiptTransaction sr = new SalesReceiptTransaction(payDate, 5000.00, empId, database);
+        sr.execute();
+
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        Paycheck pc = pt.getPaycheck(empId);
+        Assertions.assertNull(pc);
+    }
 }
