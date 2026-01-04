@@ -489,4 +489,23 @@ public class PayrollTest {
 
         validatePaycheck(pt, empId, payDate, (8 + 1.5) * 15.25);
     }
+
+    @Test
+    public void testPaySingleHourlyEmployeeOnWrongDate() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(
+                empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 8); // Quinta-feira
+
+        TimeCardTransaction tc = new TimeCardTransaction(payDate, 9.0, empId, database);
+        tc.execute();
+
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        Paycheck pc = pt.getPaycheck(empId);
+        Assertions.assertNull(pc);
+    }
 }
