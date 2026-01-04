@@ -508,4 +508,25 @@ public class PayrollTest {
         Paycheck pc = pt.getPaycheck(empId);
         Assertions.assertNull(pc);
     }
+
+    @Test
+    public void testPaySingleHourlyEmployeeTwoTimeCards() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(
+                empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 9); // Sexta-feira
+
+        TimeCardTransaction tc = new TimeCardTransaction(payDate, 2.0, empId, database);
+        tc.execute();
+
+        TimeCardTransaction tc2 = new TimeCardTransaction(payDate.minusDays(1), 5.0, empId, database);
+        tc2.execute();
+
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        validatePaycheck(pt, empId, payDate, 7 * 15.25);
+    }
 }
