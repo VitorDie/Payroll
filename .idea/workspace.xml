@@ -62,6 +62,7 @@
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOnWrongDate.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOneTimeCard.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOvertimeOneTimeCard.executor": "Run",
+    "JUnit.PayrollTest.testPaySingleHourlyEmployeeTwoTimeCards.executor": "Run",
     "JUnit.PayrollTest.testPaySingleSalariedEmployee.executor": "Run",
     "JUnit.PayrollTest.testPaySingleSalariedEmployeeOnWrongDate.executor": "Run",
     "JUnit.PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards.executor": "Run",
@@ -84,7 +85,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest.testPaySingleHourlyEmployeeTwoTimeCards">
+  <component name="RunManager" selected="JUnit.PayrollTest.testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods">
     <configuration name="PayrollTest.testPaySingleHourlyEmployeeOnWrongDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -149,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PayrollTest.testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +160,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
-      <option name="METHOD_NAME" value="testPayingSingleHourlyEmployeeNoTimeCards" />
+      <option name="METHOD_NAME" value="testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeTwoTimeCards" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeOnWrongDate" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeOvertimeOneTimeCard" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleHourlyEmployeeOneTimeCard" />
-        <item itemvalue="JUnit.PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards" />
       </list>
     </recent_temporary>
   </component>
