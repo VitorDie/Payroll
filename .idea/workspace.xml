@@ -59,6 +59,7 @@
     "JUnit.PayrollTest.testChangeNameTransaction.executor": "Run",
     "JUnit.PayrollTest.testChangeUnaffiliatedMember.executor": "Run",
     "JUnit.PayrollTest.testChangeUnionMember.executor": "Run",
+    "JUnit.PayrollTest.testHourlyUnionMemberServiceCharge.executor": "Run",
     "JUnit.PayrollTest.testPaySingleCommissionedEmployeeOnWrongDate.executor": "Run",
     "JUnit.PayrollTest.testPaySingleCommissionedEmployeeOneReceipt.executor": "Run",
     "JUnit.PayrollTest.testPaySingleCommissionedEmployeeTwoReceipts.executor": "Run",
@@ -91,7 +92,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest.testHourlyUnionMemberServiceCharge">
+  <component name="RunManager" selected="JUnit.PayrollTest.testServiceChargesSpanningMultiplePayPeriods">
     <configuration name="PayrollTest.testHourlyUnionMemberServiceCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -119,22 +120,6 @@
       <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
       <option name="METHOD_NAME" value="testPaySingleCommissionedEmployeeOnWrongDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PayrollTest.testPaySingleCommissionedEmployeeOneReceipt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="payroll-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
-      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
-      <option name="METHOD_NAME" value="testPaySingleCommissionedEmployeeOneReceipt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,13 +157,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PayrollTest.testServiceChargesSpanningMultiplePayPeriods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="payroll-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
+      <option name="METHOD_NAME" value="testServiceChargesSpanningMultiplePayPeriods" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testServiceChargesSpanningMultiplePayPeriods" />
         <item itemvalue="JUnit.PayrollTest.testHourlyUnionMemberServiceCharge" />
         <item itemvalue="JUnit.PayrollTest.testSalariedUnionMemberDues" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleCommissionedEmployeeTwoReceipts" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleCommissionedEmployeeOnWrongDate" />
-        <item itemvalue="JUnit.PayrollTest.testPaySingleCommissionedEmployeeOneReceipt" />
       </list>
     </recent_temporary>
   </component>
