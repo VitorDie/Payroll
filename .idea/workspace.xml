@@ -61,6 +61,7 @@
     "JUnit.PayrollTest.testChangeUnionMember.executor": "Run",
     "JUnit.PayrollTest.testPaySingleCommissionedEmployeeOnWrongDate.executor": "Run",
     "JUnit.PayrollTest.testPaySingleCommissionedEmployeeOneReceipt.executor": "Run",
+    "JUnit.PayrollTest.testPaySingleCommissionedEmployeeTwoReceipts.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOnWrongDate.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOneTimeCard.executor": "Run",
     "JUnit.PayrollTest.testPaySingleHourlyEmployeeOvertimeOneTimeCard.executor": "Run",
