@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d995f480-2bdf-4e93-b62b-9e723bed3269" name="Changes" comment="git push">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/ChangeMailTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/vitordie/payroll/MailMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/vitordie/payroll/PayrollTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +57,7 @@
     "JUnit.PayrollTest.testChangeCommissionedTransaction.executor": "Run",
     "JUnit.PayrollTest.testChangeDirectMethod.executor": "Run",
     "JUnit.PayrollTest.testChangeHoldMethod.executor": "Run",
+    "JUnit.PayrollTest.testChangeMailMethod.executor": "Run",
     "JUnit.PayrollTest.testChangeNameTransaction.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -76,7 +78,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest.testChangeHoldMethod">
+  <component name="RunManager" selected="JUnit.PayrollTest.testChangeMailMethod">
     <configuration name="PayrollTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -140,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PayrollTest.testChangeNameTransaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PayrollTest.testChangeMailMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
         <pattern>
@@ -150,7 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
       <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
-      <option name="METHOD_NAME" value="testChangeNameTransaction" />
+      <option name="METHOD_NAME" value="testChangeMailMethod" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testChangeMailMethod" />
         <item itemvalue="JUnit.PayrollTest.testChangeHoldMethod" />
         <item itemvalue="JUnit.PayrollTest.testChangeDirectMethod" />
         <item itemvalue="JUnit.PayrollTest.testChangeCommissionedTransaction" />
         <item itemvalue="JUnit.PayrollTest" />
-        <item itemvalue="JUnit.PayrollTest.testChangeNameTransaction" />
       </list>
     </recent_temporary>
   </component>
