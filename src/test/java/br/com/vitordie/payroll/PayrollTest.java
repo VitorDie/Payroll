@@ -647,4 +647,28 @@ public class PayrollTest {
 
         validatePaycheck(pt, empId, payDate, 2000.00);
     }
+
+    @Test
+    public void testSalariedUnionMemberDues() {
+        int empId = 1;
+        AddSalariedEmployee t = new AddSalariedEmployee(
+                empId, "Bob", "Home", 1000.00, database);
+        t.execute();
+
+        int memberId = 7734;
+        ChangeMemberTransaction cmt = new ChangeMemberTransaction(empId, memberId, 9.42, database);
+        cmt.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 30);
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        Paycheck pc = pt.getPaycheck(empId);
+        Assertions.assertNotNull(pc);
+        Assertions.assertEquals(payDate, pc.getPayDate());
+        Assertions.assertEquals(1000.0, pc.getGrossPay(), .001);
+        Assertions.assertEquals("Hold", pc.getField("Disposition"));
+        Assertions.assertEquals(47.1, pc.getDeductions(), .001);
+        Assertions.assertEquals(1000.0 - 47.1, pc.getNetPay(), .001);
+    }
 }
