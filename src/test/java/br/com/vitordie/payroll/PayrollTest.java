@@ -289,4 +289,23 @@ public class PayrollTest {
         PaymentSchedule ps = e.getSchedule();
         Assertions.assertTrue(ps instanceof BiWeeklySchedule);
     }
+
+    @Test
+    public void testChangeDirectMethod() {
+        int empId = 6;
+        AddSalariedEmployee t = new AddSalariedEmployee(
+                empId, "Mike", "Home", 3500.00, database);
+        t.execute();
+
+        ChangeDirectTransaction cddt = new ChangeDirectTransaction(empId, database);
+        cddt.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentMethod method = e.getMethod();
+        Assertions.assertNotNull(method);
+        Assertions.assertTrue(method instanceof DirectDepositMethod);
+    }
+
 }
