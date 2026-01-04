@@ -308,4 +308,24 @@ public class PayrollTest {
         Assertions.assertTrue(method instanceof DirectDepositMethod);
     }
 
+    @Test
+    public void testChangeHoldMethod() {
+        int empId = 7;
+        AddSalariedEmployee t = new AddSalariedEmployee(
+                empId, "Mike", "Home", 3500.00, database);
+        t.execute();
+
+        new ChangeDirectTransaction(empId, database).execute();
+
+        ChangeHoldTransaction cht = new ChangeHoldTransaction(empId, database);
+        cht.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentMethod method = e.getMethod();
+        Assertions.assertNotNull(method);
+        Assertions.assertTrue(method instanceof HoldMethod);
+    }
+
 }
