@@ -370,4 +370,27 @@ public class PayrollTest {
         Assertions.assertNotNull(member);
         Assertions.assertEquals(e, member);
     }
+
+    @Test
+    public void testChangeUnaffiliatedMember() {
+        int empId = 10;
+        AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        int memberId = 7743;
+        new ChangeMemberTransaction(empId, memberId, 99.42, database).execute();
+
+        ChangeUnaffiliatedTransaction cut = new ChangeUnaffiliatedTransaction(empId, database);
+        cut.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        Affiliation affiliation = e.getAffiliation();
+        Assertions.assertNotNull(affiliation);
+        Assertions.assertTrue(affiliation instanceof NoAffiliation);
+
+        Employee member = database.getUnionMember(memberId);
+        Assertions.assertNull(member);
+    }
 }
