@@ -325,7 +325,24 @@ public class PayrollTest {
 
         PaymentMethod method = e.getMethod();
         Assertions.assertNotNull(method);
-        Assertions.assertTrue(method instanceof HoldMethod);
+        Assertions.assertInstanceOf(HoldMethod.class, method);
     }
 
+    @Test
+    public void testChangeMailMethod() {
+        int empId = 8;
+        AddSalariedEmployee t = new AddSalariedEmployee(
+                empId, "Mike", "Home", 3500.00, database);
+        t.execute();
+
+        ChangeMailTransaction cmt = new ChangeMailTransaction(empId, database);
+        cmt.execute();
+
+        Employee e = database.getEmployee(empId);
+        Assertions.assertNotNull(e);
+
+        PaymentMethod method = e.getMethod();
+        Assertions.assertNotNull(method);
+        Assertions.assertTrue(method instanceof MailMethod);
+    }
 }
