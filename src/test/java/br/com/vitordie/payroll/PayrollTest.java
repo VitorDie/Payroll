@@ -603,4 +603,26 @@ public class PayrollTest {
         Paycheck pc = pt.getPaycheck(empId);
         Assertions.assertNull(pc);
     }
+
+    @Test
+    public void testPaySingleCommissionedEmployeeTwoReceipts() {
+        int empId = 2;
+        AddCommissionedEmployee t = new AddCommissionedEmployee(
+                empId, "Bill", "Home", 1500.0, 10.0, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 16); // Dia de pagamento
+
+        SalesReceiptTransaction sr = new SalesReceiptTransaction(payDate, 5000.00, empId, database);
+        sr.execute();
+
+        SalesReceiptTransaction sr2 = new SalesReceiptTransaction(
+                payDate.minusDays(1), 3500.00, empId, database);
+        sr2.execute();
+
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        validatePaycheck(pt, empId, payDate, 2350.00);
+    }
 }
