@@ -413,4 +413,19 @@ public class PayrollTest {
         Assertions.assertEquals(0.0, pc.getDeductions(), .001);
         Assertions.assertEquals(1000.00, pc.getNetPay(), .001);
     }
+
+    @Test
+    public void testPaySingleSalariedEmployeeOnWrongDate() {
+        int empId = 1;
+        AddSalariedEmployee t = new AddSalariedEmployee(
+                empId, "Bob", "Home", 1000.00, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 29);
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        Paycheck pc = pt.getPaycheck(empId);
+        Assertions.assertNull(pc);
+    }
 }
