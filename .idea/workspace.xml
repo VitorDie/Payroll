@@ -60,6 +60,7 @@
     "JUnit.PayrollTest.testChangeUnaffiliatedMember.executor": "Run",
     "JUnit.PayrollTest.testChangeUnionMember.executor": "Run",
     "JUnit.PayrollTest.testPaySingleSalariedEmployee.executor": "Run",
+    "JUnit.PayrollTest.testPaySingleSalariedEmployeeOnWrongDate.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -79,23 +80,7 @@
       <recent name="br.com.vitordie.payroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PayrollTest.testPaySingleSalariedEmployeeOnWrongDate">
-    <configuration name="PayrollTest.testChangeMailMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="payroll-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
-      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
-      <option name="METHOD_NAME" value="testChangeMailMethod" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards">
     <configuration name="PayrollTest.testChangeUnaffiliatedMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="payroll-java" />
       <extension name="coverage">
@@ -160,13 +145,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="payroll-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitordie.payroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.vitordie.payroll" />
+      <option name="MAIN_CLASS_NAME" value="br.com.vitordie.payroll.PayrollTest" />
+      <option name="METHOD_NAME" value="testPayingSingleHourlyEmployeeNoTimeCards" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PayrollTest.testPayingSingleHourlyEmployeeNoTimeCards" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleSalariedEmployeeOnWrongDate" />
         <item itemvalue="JUnit.PayrollTest.testPaySingleSalariedEmployee" />
         <item itemvalue="JUnit.PayrollTest.testChangeUnaffiliatedMember" />
         <item itemvalue="JUnit.PayrollTest.testChangeUnionMember" />
-        <item itemvalue="JUnit.PayrollTest.testChangeMailMethod" />
       </list>
     </recent_temporary>
   </component>

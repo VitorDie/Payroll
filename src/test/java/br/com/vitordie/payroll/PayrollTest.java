@@ -428,4 +428,29 @@ public class PayrollTest {
         Paycheck pc = pt.getPaycheck(empId);
         Assertions.assertNull(pc);
     }
+
+    @Test
+    public void testPayingSingleHourlyEmployeeNoTimeCards() {
+        int empId = 2;
+        AddHourlyEmployee t = new AddHourlyEmployee(
+                empId, "Bill", "Home", 15.25, database);
+        t.execute();
+
+        LocalDate payDate = LocalDate.of(2001, 11, 9); // Sexta-feira
+        PaydayTransaction pt = new PaydayTransaction(payDate, database);
+        pt.execute();
+
+        validatePaycheck(pt, empId, payDate, 0.0);
+    }
+
+    // Método auxiliar sugerido para evitar repetição de código nos próximos testes
+    private void validatePaycheck(PaydayTransaction pt, int empId, LocalDate payDate, double pay) {
+        Paycheck pc = pt.getPaycheck(empId);
+        Assertions.assertNotNull(pc);
+        Assertions.assertEquals(payDate, pc.getPayDate());
+        Assertions.assertEquals(pay, pc.getGrossPay(), .001);
+        Assertions.assertEquals("Hold", pc.getField("Disposition"));
+        Assertions.assertEquals(0.0, pc.getDeductions(), .001);
+        Assertions.assertEquals(pay, pc.getNetPay(), .001);
+    }
 }
